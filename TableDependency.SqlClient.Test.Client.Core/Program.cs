@@ -31,18 +31,17 @@ namespace TableDependency.SqlClient.Test.Client.Core
                 Console.WriteLine("All rights reserved." + Environment.NewLine);
                 Console.WriteLine("**********************************************************************************************");
                 Console.WriteLine("Choose connection string:");
-                Console.WriteLine(" - F4: SQL Server Developer 2008 - (DESKTOP-DFTT9LE\\SQLSERVER2008) user sa");
-                Console.WriteLine(" - F5: SQL Server Developer 2008 - (DESKTOP-DFTT9LE\\SQLSERVER2008) user Test_User");
+                Console.WriteLine(" - F4: tom_test");
                 Console.WriteLine(" - ESC to exit");
                 Console.WriteLine("**********************************************************************************************");
 
                 consoleKeyInfo = Console.ReadKey();
                 if (consoleKeyInfo.Key == ConsoleKey.Escape) Environment.Exit(0);
 
-            } while (consoleKeyInfo.Key != ConsoleKey.F4 && consoleKeyInfo.Key != ConsoleKey.F5);
+            } while (consoleKeyInfo.Key != ConsoleKey.F4);
 
             Console.ResetColor();
-            if (consoleKeyInfo.Key == ConsoleKey.F4) connectionString = ConfigurationManager.ConnectionStrings["SqlServer2008 sa"].ConnectionString;
+            if (consoleKeyInfo.Key == ConsoleKey.F4) connectionString = ConfigurationManager.ConnectionStrings["tom_test"].ConnectionString;
             if (consoleKeyInfo.Key == ConsoleKey.F5) connectionString = ConfigurationManager.ConnectionStrings["SqlServer2008 Test_User"].ConnectionString;
 
             // Mapper for DB columns not matching Model's columns
